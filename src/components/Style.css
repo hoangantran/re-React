@@ -1,0 +1,136 @@
+.list{
+    text-decoration: line-through;
+    color: gray;
+}
+
+.tick{
+    text-decoration: line-through;
+    color: gray;
+}
+.menu-super{
+    height: auto;
+    width: 500px;
+    border: solid 1px rgb(131, 126, 126);
+}
+.menu-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom:solid 1px rgb(131, 126, 126) !important;
+}
+
+.menu-header img{
+    width: 100px;
+}
+
+.checkIcon{
+    background-color: red;
+}
+
+.menu-header input{
+    font-size: 18px;
+    width: 410px;
+    height: 50px;
+    padding-left: 20px;
+    box-sizing: border-box;
+    border: none;
+    flex-grow: 1;
+}
+
+input:focus{
+    outline: none;
+}
+
+#clear-btn{
+    text-decoration:none;
+    color: black;
+}
+
+#clear-btn:hover{
+    text-decoration: underline;
+}
+
+.todolist{
+    margin: 0;
+    display: flex;
+    align-items: center;
+    height: 55px;
+    width: 100%;
+    border-bottom:solid 1px rgb(131, 126, 126) !important;
+}
+.todolist #check-btn{
+    justify-content: flex-start;
+    width: 20%;
+    padding-left: 0px;
+}
+.todolist:hover #del-btn{
+    opacity: 1;
+}
+.todolist #del-btn{
+    opacity: 0;
+    width: 20%;
+    flex-grow: 1;
+}
+
+.menu-item{
+    flex-grow: 2;
+    text-align: start;
+    width: 50%;
+    padding-left: 10px;
+}
+
+.menu-footer{
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+}
+.footer-title{
+    width: 30%;
+}
+.footer-action{
+    
+    width: 70%;
+}
+.footer-action button{
+    margin: 0 10px 0 10px;
+}
+
+.hide{
+    opacity: 0 !important;
+    height: 0;
+}
+
+
+
+
+.TracfficLight{
+    display: flex;
+    flex-direction: column;
+}
+.TracfficLight .blub {
+    width: 64px;
+    height: 64px;
+    display: inline-block;
+    border-radius: 50%;
+    margin: 10px;
+    opacity: 0.2;
+}
+.TracfficLight .blub.active{
+    opacity: 1;
+}
+.TracfficLight .blub.red {
+    background-color: red;
+}
+.TracfficLight .blub.yellow {
+    background-color: yellow;
+}
+.TracfficLight .blub.green {
+    background-color: green;
+}
+
+
+
+
+
