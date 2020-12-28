@@ -18,7 +18,6 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-      <p id="title">. . .T o d o s. . .</p>
         {
           Menu()
         }

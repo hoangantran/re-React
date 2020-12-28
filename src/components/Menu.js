@@ -61,7 +61,17 @@ export default function Menu() {
   const [newItem, setnewItem] = useState('');
   const [count, setCount] = useState(num.length);
   const [todoList, settodoList] = useState(data);
-  const [select, setSelect] = useState(false);
+
+
+  function randomKey() {
+    var result           = '';
+    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+      for ( var i = 0; i < 15; i++ ) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+      }
+    return result;
+  }
 
   function change(item){
     return() => {
@@ -82,37 +92,36 @@ export default function Menu() {
 
   function selectAll(){
     const data = JSON.parse(localStorage.getItem('todoList'));
-    if(select){
-      data.map((item)=>{
-        item.isComplete = true;
-        return item;
-      });
-      settodoList(data);
-      setSelect(false);
-    }
-    else{
+    var checking = data.filter(item => item.isComplete === true);
+    if(checking.length === data.length){
       data.map((item)=>{
         item.isComplete = false;
         return item;
       });
       settodoList(data);
-      setSelect(true);
+    }
+    else{
+      data.map((item)=>{
+        item.isComplete = true;
+        return item;
+      });
+      settodoList(data);
     }
     localStorage.setItem('todoList',JSON.stringify(data));
     countItem();
   }
 
   function clearAll() {
-    const data = [];
-    localStorage.setItem('todoList',JSON.stringify(data));
-    settodoList([]);
+    const data = JSON.parse(localStorage.getItem('todoList'));
+    const listAfterClear = data.filter(item => item.isComplete === false);
+    settodoList(listAfterClear);
     countItem();
   }
 
   function addItem(e) {
     if(e.key === 'Enter'){
       if(e.target.value){
-        todoList.push({title: e.target.value, isComplete: false});
+        todoList.push({ id: randomKey(), title: e.target.value, isComplete: false});
         localStorage.setItem('todoList',JSON.stringify(todoList));
         settodoList([
           ...todoList
