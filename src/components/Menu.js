@@ -1,5 +1,6 @@
 import './Style.css';
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import on from '../img/check-on.svg';
 import off from '../img/check-off.svg';
@@ -230,5 +231,9 @@ export default function Menu() {
       </div>
     </div>
   )
+}
+
+Menu.PropTypes = {
+  newItem : PropTypes.string
 }
   
